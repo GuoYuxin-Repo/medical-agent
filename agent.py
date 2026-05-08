@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
@@ -5,7 +8,7 @@ from pubmed_search import search_pubmed
 
 llm = ChatOpenAI(
     model="deepseek-chat",
-    api_key="sk-b3ff1879b24345ab9fd7dcbb3dc3782f",  # 替换成你的Key
+    api_key=os.getenv("DEEPSEEK_API_KEY"),
     base_url="https://api.deepseek.com",
     temperature=0.3
 )

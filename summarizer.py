@@ -1,9 +1,12 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from openai import OpenAI  # DeepSeek兼容OpenAI的接口格式，直接用这个库
 from pubmed_search import search_pubmed  # 引入第一阶段写的检索函数
 
 # 初始化DeepSeek客户端
 client = OpenAI(
-    api_key="sk-b3ff1879b24345ab9fd7dcbb3dc3782f",  # 替换成你的Key
+    api_key="DEEPSEEK_API_KEY",  
     base_url="https://api.deepseek.com"  # DeepSeek的API地址
 )
 

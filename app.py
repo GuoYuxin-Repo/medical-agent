@@ -1,4 +1,4 @@
-import streamlit as st  # Streamlit：用Python写网页界面的库，不需要懂前端
+import streamlit as st  
 import time
 from agent import run_agent
 
@@ -6,7 +6,7 @@ from agent import run_agent
 st.set_page_config(
     page_title="医疗文献调研 AI Agent",
     page_icon="🔬",
-    layout="wide"  # 宽屏布局
+    layout="wide"  
 )
 
 st.title("🔬 医疗文献调研 AI Agent")
@@ -31,7 +31,7 @@ question = st.text_area(
     height=100
 )
 
-col1, col2 = st.columns([1, 4])  # 把页面分成两列，按钮占1份宽度
+col1, col2 = st.columns([1, 4])  
 with col1:
     start_button = st.button("开始调研", type="primary", use_container_width=True)
 
@@ -54,7 +54,7 @@ if start_button and question:
     # 显示报告
     st.divider()
     st.subheader("📄 研究报告")
-    st.markdown(report)  # markdown格式渲染报告
+    st.markdown(report)  
     
     # 显示耗时指标
     st.divider()
